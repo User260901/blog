@@ -1,0 +1,9 @@
+# IDE settings
+.idea/
+
+# Build output
+dist/
+.angular/
+
+# Node modules
+node_modules/

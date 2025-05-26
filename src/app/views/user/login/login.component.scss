@@ -1,0 +1,81 @@
+@import "../../../../../public/styles/variables";
+
+.login {
+  padding-top: 123px;
+  padding-bottom: 120px;
+
+  .container {
+    display: flex;
+    align-items: flex-start;
+
+    .login-form {
+      max-width: 429px;
+
+      .form-title {
+        font-family: 'Lora', sans-serif;
+        font-weight: 400;
+        font-size: 36px;
+        color: $light-blue;
+        margin-bottom: 40px;
+
+      }
+
+      .form {
+        .login-input {
+          margin-bottom: 5px;
+
+          input {
+            width: 100%;
+          }
+        }
+
+        .remember {
+          display: flex;
+          align-items: baseline;
+          margin-top: 10px;
+
+          label {
+            font-size: 14px;
+            color: $dark-blue;
+            margin-left: 10px;
+
+          }
+
+          a {
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+            color: $light-blue;
+          }
+        }
+
+        .login-action {
+          margin-top: 40px;
+
+          .button {
+            border-radius: 5px;
+            padding: 15px 40px;
+            width: 100%;
+            font-size: 16px;
+          }
+        }
+
+        .auth {
+          margin-top: 10px;
+
+          a {
+            font-size: 14px;
+            color: $light-blue;
+            text-decoration: none;
+          }
+        }
+      }
+
+    }
+
+    .form-image {
+      margin-left: 185px;
+    }
+
+  }
+
+}

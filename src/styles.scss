@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../public/styles/global";
+@import "../public/styles/variables";
+@import "../public/styles/fonts";
+
+/* Importing Bootstrap SCSS file. */
+
+.carousel-control-prev {
+  left: -70px;
+}
+
+.carousel-control-next {
+  right: -70px;
+}
+
+.carousel-indicators [data-bs-target] {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border: 1px solid white;
+  opacity: 1;
+
+  &.active {
+    background-color: white;
+  }
+}
+
+
+.strong {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: $dark-blue;
+}

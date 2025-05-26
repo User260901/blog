@@ -1,0 +1,36 @@
+@import "../styles/variables";
+
+.container {
+  max-width: 1289px;
+  margin: 0 auto;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body, html {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+input {
+  border: 1px solid #709fdc;
+  border-radius: 3px;
+  padding: 20px 64px 20px 20px;
+  box-sizing: border-box;
+}
+
+.button {
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: #fff;
+  box-sizing: border-box;
+  border: 0;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  background: $light-blue;
+}

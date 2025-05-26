@@ -1,0 +1,296 @@
+@import "../../../../public/styles/variables";
+
+.main {
+  padding-bottom: 120px;
+
+  .container {
+    .slider-img {
+      width: 100%;
+      height: 500px;
+      background-position: center;
+      background-size: cover;
+      padding: 116px 0 0 116px;
+
+      .slider-description {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: $light-blue;
+      }
+
+      .slider-title {
+        font-family: "Lora", sans-serif;
+        font-weight: 400;
+        font-size: 50px;
+        line-height: 130%;
+        color: #fff;
+        max-width: 550px;
+
+        span {
+          color: $light-blue;
+        }
+      }
+
+      .slider-additional {
+        margin-bottom: 10px;
+        font-size: 24px;
+        line-height: 130%;
+        color: #fff;
+        max-width: 456px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      .slider-action {
+        margin-top: 40px;
+
+        .button {
+          border-radius: 5px;
+          padding: 15px 40px;
+          width: 163px;
+        }
+      }
+    }
+  }
+}
+
+.services {
+  padding-bottom: 120px;
+
+  .container {
+    .service-title {
+      font-family: 'Lora', sans-serif;
+      font-weight: 400;
+      font-size: 38px;
+      color: $light-blue;
+      margin-bottom: 40px;
+    }
+
+    .our-services {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+
+      .our-service {
+        width: 291px;
+
+        .our-service-image {
+          width: 100%;
+          height: 291px;
+          background-position: center;
+          background-size: cover;
+          margin-bottom: 20px;
+        }
+
+        .our-service-name {
+          font-family: "Montserrat", sans-serif;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 130%;
+          color: $light-blue;
+          margin-bottom: 10px;
+        }
+
+        .our-service-description {
+          font-size: 14px;
+          line-height: 130%;
+          color: $dark-blue;
+          margin-bottom: 15px;
+          height: 90px;
+        }
+
+        .our-service-additional {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .our-service-price {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            color: $light-blue;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.about {
+  padding-bottom: 120px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .about-image {
+      height: 551px;
+      background-position: center;
+      background-size: cover;
+      width: 460px;
+      border-radius: 5px;
+    }
+
+    .about-us {
+      margin-left: 68px;
+
+      .about-us-title {
+        font-family: 'Lora', sans-serif;
+        font-weight: 400;
+        font-size: 38px;
+        color: $light-blue;
+        margin-bottom: 20px;
+      }
+
+      .about-us-text {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        color: $dark-blue;
+        max-width: 633px;
+        margin-bottom: 40px;
+
+      }
+
+      .advantages {
+        max-width: 703px;
+
+        .advantages-title {
+          font-family: 'Lora', sans-serif;
+          font-weight: 400;
+          font-size: 26px;
+          color: $light-blue;
+          margin-bottom: 20px;
+        }
+
+        .advantage-items {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px 71px;
+
+          .advantage-item {
+            display: flex;
+            align-items: center;
+            .advantage-step {
+              font-family: "Lora", sans-serif;
+              font-weight: 500;
+              font-size: 50px;
+              color: $light-blue;
+            }
+
+            .advantage-item-text {
+              font-family: "Montserrat", sans-serif;
+              margin-left: 20px;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 130%;
+              color: #1e1a2b;
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.best-articles {
+  padding-bottom: 120px;
+
+  .container {
+    .articles-title {
+      font-family: "Lora", sans-serif;
+      font-weight: 400;
+      font-size: 38px;
+      color: $light-blue;
+      margin-bottom: 40px;
+    }
+
+    .articles {
+      display: flex;
+      justify-content: space-between;
+
+      .article {
+        max-width: 291px;
+        display: flex;
+        flex-direction: column;
+
+        .article-image {
+          width: 291px;
+          height: 291px;
+          background-position: center;
+          background-size: cover;
+          border-radius: 5px;
+          margin-bottom: 15px;
+          position: relative;
+
+          .article-category {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            border-radius: 5px;
+            padding: 10px 18px;
+            background: #fff;
+            font-size: 11px;
+            text-align: center;
+            color: $light-blue;
+          }
+        }
+
+        .article-title {
+          font-family: "Montserrat", sans-serif;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 130%;
+          color: $light-blue;
+          margin-bottom: 20px;
+        }
+
+        .article-text {
+          font-size: 14px;
+          line-height: 130%;
+          color: $dark-blue;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+
+        }
+
+        .article-read-more {
+          margin-top: auto;
+          font-size: 16px;
+          text-decoration: underline;
+          text-decoration-skip-ink: none;
+          color: #709fdc;
+        }
+      }
+    }
+
+    .blog {
+      margin-top: 40px;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+
+      a {
+        margin-right: 14px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        color: #709fdc;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+.reviews {
+  background: red;
+}

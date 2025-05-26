@@ -1,0 +1,47 @@
+@import "../../../../../public/styles/variables";
+.header {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  .container {
+    display: flex;
+    align-items: center;
+    .menu {
+      width: 429px;
+      margin-left: 100px;
+      ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        li {
+          list-style: none;
+          a {
+            color: $dark-blue;
+            text-decoration: none;
+            &.active {
+              color: $light-blue;
+            }
+          }
+        }
+      }
+    }
+    .contacts {
+      margin-left: 257px;
+      a {
+        color: $light-blue;
+        text-decoration: none;
+      }
+    }
+    .login {
+      margin-left: 141px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      .login-icon {
+        margin-right: 7px;
+        color: $dark-blue;
+      }
+
+    }
+  }
+
+}

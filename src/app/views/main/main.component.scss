@@ -292,5 +292,100 @@
 
 
 .reviews {
-  background: red;
+  padding-bottom: 120px;
+  .reviews-title {
+    font-family: 'Lora', sans-serif;
+    font-weight: 400;
+    font-size: 38px;
+    color: $light-blue;
+    margin-bottom: 20px;
+  }
+  .reviews-slider {
+    position: relative;
+
+    .slide {
+      border: 1px solid #709fdc;
+      border-radius: 5px;
+      padding: 30px;
+      max-width: 396px;
+      height: 267px;
+
+      .slide-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+
+        .slide-title {
+          margin-left: 20px;
+          font-family: 'Monserat', sans-serif;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 130%;
+          color: #709fdc;
+        }
+      }
+    }
+    .reviews-arrows {
+      display: flex;
+      a {
+        top: calc(50% - 5px);
+        display: flex;
+        position: absolute;
+        cursor: pointer;
+        &.move-backwards {
+          left: -41px
+        }
+        &.move-forwards {
+          right: -41px
+        }
+      }
+     }
+  }
+}
+
+.location {
+  margin-bottom: 120px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    .our-location-items {
+      margin-left: 26px;
+
+      .our-location-title {
+        font-family: "Lora", sans-serif;
+        font-weight: 400;
+        font-size: 38px;
+        color: #709fdc;
+      }
+
+      .our-location-item {
+        margin-bottom: 20px;
+
+        .our-location-item-title {
+          font-family: "Lora", sans-serif;
+          font-weight: 500;
+          font-size: 20px;
+          color: $light-blue;
+          margin-bottom: 10px;
+        }
+
+        .our-location-item-text {
+          font-size: 14px;
+          line-height: 130%;
+          color: $dark-blue;
+        }
+
+        .our-location-item-icons {
+
+          svg {
+            margin-right: 20px;
+            cursor: pointer;
+          }
+        }
+
+      }
+
+    }
+  }
 }

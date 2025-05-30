@@ -40,7 +40,6 @@
         color: #fff;
         max-width: 456px;
         margin-top: 20px;
-        margin-bottom: 10px;
       }
 
       .slider-action {
@@ -49,7 +48,6 @@
         .button {
           border-radius: 5px;
           padding: 15px 40px;
-          width: 163px;
         }
       }
     }
@@ -176,6 +174,7 @@
           .advantage-item {
             display: flex;
             align-items: center;
+
             .advantage-step {
               font-family: "Lora", sans-serif;
               font-weight: 500;
@@ -293,6 +292,7 @@
 
 .reviews {
   padding-bottom: 120px;
+
   .reviews-title {
     font-family: 'Lora', sans-serif;
     font-weight: 400;
@@ -300,6 +300,7 @@
     color: $light-blue;
     margin-bottom: 20px;
   }
+
   .reviews-slider {
     position: relative;
 
@@ -325,21 +326,25 @@
         }
       }
     }
+
     .reviews-arrows {
       display: flex;
+
       a {
         top: calc(50% - 5px);
         display: flex;
         position: absolute;
         cursor: pointer;
+
         &.move-backwards {
           left: -41px
         }
+
         &.move-forwards {
           right: -41px
         }
       }
-     }
+    }
   }
 }
 
@@ -348,7 +353,7 @@
 
   .container {
     display: flex;
-    justify-content: space-between;
+
     .our-location-items {
       margin-left: 26px;
 
@@ -371,9 +376,13 @@
         }
 
         .our-location-item-text {
-          font-size: 14px;
-          line-height: 130%;
-          color: $dark-blue;
+          a {
+            font-size: 14px;
+            line-height: 130%;
+            color: $dark-blue;
+            max-width: 500px;
+            text-decoration: none;
+          }
         }
 
         .our-location-item-icons {

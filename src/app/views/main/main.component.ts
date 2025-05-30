@@ -1,56 +1,64 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
-import {NgForOf} from '@angular/common';
+import {NgForOf, NgIf, NgStyle} from '@angular/common';
 import {ArticlesService} from '../../shared/services/articles.service';
 import {DefaultResponse} from '../../../types/default-response.type';
 import {BestArticlesType} from '../../../types/best-articles.type';
-import {environment} from '../../../environments/environment';
 import {RouterLink} from '@angular/router';
 import {CarouselModule, OwlOptions} from 'ngx-owl-carousel-o';
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import {RequestExpertiseService} from '../../shared/services/request-expertise.service';
+import {PopupComponent} from '../../shared/popup/popup.component';
+import {OurServicesType} from '../../../types/our-services.type';
 
 @Component({
   selector: 'app-main',
-  imports: [NgbCarouselModule, NgForOf, RouterLink, CarouselModule],
+  imports: [NgbCarouselModule, NgForOf, RouterLink, CarouselModule, NgIf, ReactiveFormsModule, FormsModule, PopupComponent],
   templateUrl: './main.component.html',
   standalone: true,
   styleUrl: './main.component.scss'
 })
-export class MainComponent implements OnInit{
+export class MainComponent implements OnInit {
 
-  services = [
+  bestArticles: BestArticlesType[] = []
+  orderPopUp = false;
+  services: OurServicesType[] = [
     {
       image: '/service1.png',
       name: 'Создание сайтов',
       description: 'В краткие сроки мы создадим качественный и самое главное продающий сайт для продвижения Вашего бизнеса!',
+      serviceType: 'Фриланс',
       price: "7 500",
     },
     {
       image: '/service2.png',
       name: 'Продвижение',
       description: 'Вам нужен качественный SMM-специалист или грамотный таргетолог? Мы готовы оказать Вам услугу “Продвижения” на наивысшем уровне!',
+      serviceType: 'SMM',
       price: "3 500",
     },
     {
       image: '/service3.png',
       name: 'Реклама',
       description: 'Без рекламы не может обойтись ни один бизнес или специалист. Обращаясь к нам, мы гарантируем быстрый прирост клиентов за счёт правильно настроенной рекламы.',
+      serviceType: 'Таргет',
       price: "1 000",
     },
     {
       image: '/service4.png',
       name: 'Копирайтинг',
       description: 'Наши копирайтеры готовы написать Вам любые продающие текста, которые не только обеспечат рост охватов, но и помогут выйти на новый уровень в продажах.',
+      serviceType: 'Копирайтинг',
       price: "750",
     }
   ]
-  bestArticles: BestArticlesType[] = []
-  serverStaticPath = environment.serverStaticPath
+  selectedServiceType = '';
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
     touchDrag: false,
     pullDrag: false,
-    dots:false,
+    dots: false,
     navSpeed: 700,
     responsive: {
       0: {
@@ -83,19 +91,25 @@ export class MainComponent implements OnInit{
     }
   ]
 
-  constructor(private articlesService: ArticlesService) {
-  }
+  constructor(private articlesService: ArticlesService) {}
 
   ngOnInit() {
     this.articlesService.getBestArticles().subscribe(data => {
-      if((data as DefaultResponse).error !== undefined){
+      if ((data as DefaultResponse).error !== undefined) {
         throw new Error((data as DefaultResponse).message)
       }
-
       this.bestArticles = data as BestArticlesType[];
-
       console.log(this.bestArticles);
     })
+  }
+
+  closePopup(event: boolean) {
+    this.orderPopUp = event
+  }
+
+  openPopup(serviceType: string) {
+    this.orderPopUp = true;
+    this.selectedServiceType = serviceType;
   }
 
 }

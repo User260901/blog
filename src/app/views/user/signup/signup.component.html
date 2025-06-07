@@ -1,28 +1,41 @@
-<section class="signup">
+<section class="signup" [formGroup]="signUpForm">
   <div class="container">
     <div class="signup-form">
       <h1 class="form-title">Регистрация на сайте</h1>
       <form class="form">
-        <div class="signup-input">
-          <input type="text" placeholder="Ваше имя">
+        <div class="signup-input" [class.report-alert]="(signUpForm.get('name')?.invalid && (signUpForm.get('name')?.dirty || signUpForm.get('name')?.touched))">
+          <input type="text" placeholder="Ваше имя" formControlName="name" name="name">
+          <div>
+            имя - может содержать русские буквы и пробелы. Каждое новое слово - с большой буквы
+          </div>
+
         </div>
-        <div class="signup-input">
-          <input type="text" placeholder="Электронная почта">
+        <div class="signup-input" [class.report-alert]="(signUpForm.get('email')?.invalid && (signUpForm.get('email')?.dirty || signUpForm.get('email')?.touched))">
+          <input type="text" placeholder="Электронная почта" formControlName="email" name="email">
+          <div>
+            Email - должен быть корректным
+          </div>
         </div>
-        <div class="signup-input">
-          <input type="text" placeholder="Пароль">
+        <div class="signup-input" [class.report-alert]="(signUpForm.get('password')?.invalid && (signUpForm.get('password')?.dirty || signUpForm.get('password')?.touched))">
+          <input type="password" placeholder="Пароль" formControlName="password" name="password">
+          <div>
+            <ul>
+              <li>пароль должен быть не менее 8 символов</li>
+              <li>содержать как минимум 1 букву в верхнем регистре и как минимум 1 цифру</li>
+            </ul>
+          </div>
         </div>
         <div class="signup-agree">
-          <input type="checkbox" id="agree">
+          <input type="checkbox" id="agree" formControlName="agree" name="agree" >
           <label for="agree" class="agree">
             Я принимаю <a href="#">условия пользовательского соглашения</a> и даю <a href="#">на обработку персональных данных.</a>
           </label>
         </div>
         <div class="signup-action">
-          <button class="button">Зарегистрироваться</button>
+          <button class="button" [disabled]="signUpForm.invalid" (click)="signup()">Зарегистрироваться</button>
         </div>
         <div class="login">
-          Уже есть аккаунт? <a href="login">Войдите</a>
+          Уже есть аккаунт? <a routerLink="/login">Войдите</a>
         </div>
       </form>
     </div>

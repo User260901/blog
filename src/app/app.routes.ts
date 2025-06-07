@@ -15,6 +15,12 @@ export const routes: Routes = [
       {
         path: 'signup', loadComponent: () => import('./views/user/signup/signup.component').then(c => c.SignupComponent)
       },
+      {
+        path: 'articles', loadComponent: () => import('./views/articles/articles.component').then(c => c.ArticlesComponent)
+      },
+      {
+        path: 'article/:url', loadComponent: () => import('./views/article/article.component').then(c => c.ArticleComponent)
+      },
     ]
   }
 ];

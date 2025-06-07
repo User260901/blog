@@ -33,20 +33,21 @@ export class PopupComponent implements OnInit {
   @Output() closePopup: EventEmitter<boolean> = new EventEmitter();
 
   @ViewChild('popup') popupRef!: ElementRef;
+
   constructor(private requestService: RequestExpertiseService) {
   }
 
   ngOnInit() {
-    if(this.serviceType && this.serviceType.length > 0) {
+    if (this.serviceType && this.serviceType.length > 0) {
       this.popupForm.service = this.serviceType
     }
   }
 
-  close(){
+  close() {
     this.closePopup.emit(false);
   }
 
-  requestOrder(){
+  requestOrder() {
     let dataToSend: RequestDataType = {
       service: '',
       name: '',
@@ -54,24 +55,31 @@ export class PopupComponent implements OnInit {
       type: ''
     }
 
-    if(this.services && this.services.length > 0) {
+    if (this.services && this.services.length > 0) {
       dataToSend = this.popupForm
       dataToSend.type = 'order'
-    }else {
+
+    } else {
       dataToSend.name = this.popupForm.name;
       dataToSend.phone = this.popupForm.phone;
       dataToSend.type = 'consultation'
       delete dataToSend.service
     }
 
-    this.requestService.requestExpertise(dataToSend).subscribe(res => {
-      if(res.error){
-        this.error = true
-        return
-      }
-      this.error = false
-      this.success = true;
-    })
+    this.requestService.requestExpertise(dataToSend)
+      .subscribe({
+        next: (res:DefaultResponse)=>{
+          if(res.error){
+            this.error = res.error;
+            throw new Error(res.message)
+          }
+          this.success = true;
+        },
+        error: err => {
+          this.error = true;
+          throw err;
+        }
+      })
   }
 
 

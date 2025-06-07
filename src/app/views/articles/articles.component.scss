@@ -1,0 +1,195 @@
+@import "../../../../public/styles/variables";
+@import "../../../../public/styles/mixins";
+
+.articles {
+  padding-top: 80px;
+  padding-bottom: 120px;
+
+  .container {
+    .articles-title {
+      @include head-lora-38();
+      margin-bottom: 40px;
+    }
+
+    .articles-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      height: 45px;
+
+      .filter-items {
+        max-width: 800px;
+        display: flex;
+
+        .filter-item {
+          display: flex;
+          border: 1px solid $light-blue;
+          border-radius: 5px;
+          padding: 10px 20px;
+          margin-right: 10px;
+
+          .filter-item-text {
+            font-family: "Lora", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: $light-blue;
+          }
+
+          .filter-item-close {
+            margin-left: 8px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .filter-menu {
+        cursor: pointer;
+        position: relative;
+
+        .article-filter-head {
+          width: 148px;
+          display: flex;
+          justify-content: space-between;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+        }
+
+        .article-filter-body {
+          position: absolute;
+          display: none;
+          top: 44px;
+          left: 0;
+          width: 100%;
+          padding: 12px 23px;
+          background: #fff;
+          border: 1px solid #B9D5FD;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+          z-index: 2;
+
+          .article-filter-items {
+            margin-bottom: 14px;
+            .article-filter-item {
+              display: flex;
+              justify-content: space-between;
+              font-family: "Lora", sans-serif;
+              font-weight: 400;
+              font-size: 16px;
+              color: #bebebe;
+
+              &.active {
+                font-size: 16px;
+                color: #071739;
+              }
+            }
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        &.open {
+          .article-filter-head {
+            width: 257px;
+            background-color: #B9D5FD;
+            padding: 10px 20px;
+          }
+
+          .article-filter-body {
+            display: block
+          }
+        }
+      }
+    }
+
+    .articles-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 40px 24px;
+
+      .articles-item {
+        display: flex;
+        flex-direction: column;
+        max-width: 292px;
+
+        .articles-item-img {
+          margin-bottom: 20px;
+          height: 291px;
+          width: 291px;
+          background-size: cover;
+          background-position: center;
+          border-radius: 5px;
+          position: relative;
+          .article-category {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            border-radius: 5px;
+            padding: 10px 18px;
+            background: #fff;
+            font-size: 11px;
+            text-align: center;
+            color: $light-blue;
+          }
+        }
+
+        .articles-item-title {
+          font-family: "Montserrat", sans-serif;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 130%;
+          color: $light-blue;
+          margin-bottom: 20px;
+        }
+
+        .articles-item-text {
+          font-family: "Montserrat", sans-serif;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 130%;
+          color: $dark-blue;
+          margin-bottom: 20px;
+        }
+
+        .articles-item-read-more {
+          margin-top: auto;
+        }
+      }
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 60px;
+
+      .prev {
+        margin-right: 40px;
+        cursor: pointer;
+      }
+
+      .pages {
+        a {
+          margin-right: 20px;
+          text-decoration: none;
+          font-weight: 400;
+          font-size: 20px;
+          color: $dark-blue;
+          cursor: pointer;
+
+          &.active {
+            color: #B9D5FD
+          }
+        }
+      }
+
+      .next {
+        margin-left: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}

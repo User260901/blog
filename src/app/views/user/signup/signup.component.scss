@@ -1,4 +1,5 @@
 @import "../../../../../public/styles/variables";
+@import "../../../../../public/styles/mixins";
 
 .signup {
   padding-top: 123px;
@@ -12,17 +13,33 @@
       max-width: 422px;
 
       .form-title {
-        font-family: 'Lora', sans-serif;
-        font-weight: 400;
-        font-size: 36px;
-        color: $light-blue;
+        @include head-lora-36();
         margin-bottom: 40px;
-
       }
 
       .form {
         .signup-input {
           margin-bottom: 5px;
+          div {
+            display: none;
+            color: red;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            font-family: "Lora", sans-serif;
+            font-style: italic;
+          }
+
+          &.report-alert {
+
+            input {
+              border-color: red;
+            }
+
+            div {
+              display: block
+            }
+          }
 
           input {
             width: 100%;

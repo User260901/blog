@@ -1,25 +1,29 @@
-<section class="login">
+<section class="login" [formGroup]="loginForm">
   <div class="container">
     <div class="login-form">
       <h1 class="form-title">Войти в личный кабинет</h1>
       <form class="form">
         <div class="login-input">
-          <input type="text" placeholder="Электронная почта">
+          <input type="text" placeholder="Электронная почта" formControlName="email" name="email"
+                 [ngStyle]="{'border-color': loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)? 'red' : ''}"
+          >
         </div>
         <div class="login-input">
-          <input type="text" placeholder="Пароль">
+          <input type="password" placeholder="Пароль" formControlName="password" name="password"
+                 [ngStyle]="{'border-color': loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty) ? 'red' : ''}"
+          >
         </div>
         <div class="remember">
-          <input type="checkbox" id="remember">
+          <input type="checkbox" id="remember" formControlName="rememberMe">
           <label for="remember">
             Запомнить меня
           </label>
         </div>
         <div class="login-action">
-          <button class="button">Войти</button>
+          <button class="button" [disabled]="loginForm.invalid" (click)="login()">Войти</button>
         </div>
         <div class="auth">
-          Нет аккаунта? <a href="signup">Пройдите регистрацию</a>
+          Нет аккаунта? <a routerLink="/signup">Пройдите регистрацию</a>
         </div>
       </form>
     </div>

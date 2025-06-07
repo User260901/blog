@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import {NgIf} from '@angular/common';
 import {PopupComponent} from '../../popup/popup.component';
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-footer',
-  imports: [
-    NgIf,
-    PopupComponent
-  ],
+    imports: [
+        NgIf,
+        PopupComponent,
+        RouterLink
+    ],
   templateUrl: './footer.component.html',
   standalone: true,
   styleUrl: './footer.component.scss'

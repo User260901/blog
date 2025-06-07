@@ -1,4 +1,5 @@
 @import "../../../../public/styles/variables";
+@import "../../../../public/styles/mixins";
 
 .popup {
   width: 100%;
@@ -49,11 +50,8 @@
       }
 
       .popup-title {
-        font-family: "Lora", sans-serif;
+        @include head-lora-38();
         text-align: center;
-        font-weight: 400;
-        font-size: 38px;
-        color: $light-blue;
         margin-bottom: 20px;
       }
 

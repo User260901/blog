@@ -14,6 +14,7 @@ export class RequestExpertiseService {
 
   requestExpertise(data: RequestDataType): Observable<DefaultResponse> {
     return this.http.post<DefaultResponse>(environment.api + "requests", data)
+
   }
 
 }

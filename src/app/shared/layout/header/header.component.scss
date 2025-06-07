@@ -5,6 +5,7 @@
   .container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     .menu {
       width: 429px;
       margin-left: 100px;
@@ -12,6 +13,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 0;
+        margin: 0;
         li {
           list-style: none;
           a {
@@ -25,20 +28,31 @@
       }
     }
     .contacts {
-      margin-left: 257px;
+      margin-left: 100px;
       a {
         color: $light-blue;
         text-decoration: none;
       }
     }
     .login {
-      margin-left: 141px;
+      margin-left: 120px;
       display: flex;
       align-items: center;
       cursor: pointer;
       .login-icon {
         margin-right: 7px;
         color: $dark-blue;
+      }
+
+      .login-text {
+       a{
+         font-family: "Montserrat", sans-serif;
+         font-weight: 500;
+         font-size: 16px;
+         line-height: 130%;
+         color: $dark-blue;
+         text-decoration: none;
+       }
       }
 
     }

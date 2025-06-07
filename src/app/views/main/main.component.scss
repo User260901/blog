@@ -1,4 +1,5 @@
 @import "../../../../public/styles/variables";
+@import "../../../../public/styles/mixins";
 
 .main {
   padding-bottom: 120px;
@@ -59,10 +60,7 @@
 
   .container {
     .service-title {
-      font-family: 'Lora', sans-serif;
-      font-weight: 400;
-      font-size: 38px;
-      color: $light-blue;
+      @include head-lora-38();
       margin-bottom: 40px;
     }
 
@@ -137,10 +135,7 @@
       margin-left: 68px;
 
       .about-us-title {
-        font-family: 'Lora', sans-serif;
-        font-weight: 400;
-        font-size: 38px;
-        color: $light-blue;
+        @include head-lora-38();
         margin-bottom: 20px;
       }
 
@@ -204,10 +199,7 @@
 
   .container {
     .articles-title {
-      font-family: "Lora", sans-serif;
-      font-weight: 400;
-      font-size: 38px;
-      color: $light-blue;
+      @include head-lora-38();
       margin-bottom: 40px;
     }
 
@@ -294,10 +286,7 @@
   padding-bottom: 120px;
 
   .reviews-title {
-    font-family: 'Lora', sans-serif;
-    font-weight: 400;
-    font-size: 38px;
-    color: $light-blue;
+   @include head-lora-38();
     margin-bottom: 20px;
   }
 
@@ -358,10 +347,7 @@
       margin-left: 26px;
 
       .our-location-title {
-        font-family: "Lora", sans-serif;
-        font-weight: 400;
-        font-size: 38px;
-        color: #709fdc;
+        @include head-lora-38();
       }
 
       .our-location-item {

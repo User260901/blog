@@ -41,3 +41,40 @@ input {
   cursor: not-allowed;
   opacity: 0.5;
 }
+
+.article-text {
+  font-size: 20px;
+  line-height: 130%;
+  color: #709fdc;
+
+  h1, h3 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #709fdc;
+
+    a {
+      text-decoration: none;
+      color: #709fdc;
+    }
+  }
+
+  p, ol li, ul li {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: #071739;
+    margin: 20px 0;
+  }
+  b {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: #709fdc;
+    margin: 20px 0;
+  }
+
+}
+

@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../public/styles/global";
+@import "../public/styles/mixins";
 @import "../public/styles/variables";
 @import "../public/styles/fonts";
 
@@ -33,3 +34,4 @@
   font-size: 14px;
   color: $dark-blue;
 }
+

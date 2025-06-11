@@ -3,23 +3,27 @@ import {ArticlesService} from '../../shared/services/articles.service';
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import {ArticleType} from '../../../types/article.type';
 import {NgForOf, NgIf} from '@angular/common';
-import {BestArticlesType} from '../../../types/best-articles.type';
+import {ArticlePreviewType} from '../../../types/articlePreview.type ';
+import {ArticlesComponent} from '../../shared/articles/articles.component';
+import {CommentsComponent} from '../../shared/components/comments/comments.component';
+
 
 @Component({
-  selector: 'app-article',
+  selector: 'app-blog',
   imports: [
     NgIf,
     NgForOf,
-    RouterLink
+    ArticlesComponent,
+    CommentsComponent
   ],
   standalone: true,
-  templateUrl: './article.component.html',
-  styleUrl: './article.component.scss'
+  templateUrl: './blog.component.html',
+  styleUrl: './blog.component.scss'
 })
-export class ArticleComponent implements OnInit {
+export class BlogComponent implements OnInit {
 
-  article!: ArticleType
-  relatedArticles: BestArticlesType[] = []
+  article!: ArticleType;
+  relatedArticles: ArticlePreviewType[] = [];
 
   constructor(private ArticleService: ArticlesService,  private ActivatedRoute: ActivatedRoute) {}
 

@@ -81,12 +81,9 @@
         }
 
         .our-service-name {
-          font-family: "Montserrat", sans-serif;
-          font-weight: 500;
-          font-size: 20px;
-          line-height: 130%;
-          color: $light-blue;
+         @include montserrat-20();
           margin-bottom: 10px;
+          line-height: 130%;
         }
 
         .our-service-description {
@@ -193,7 +190,6 @@
   }
 }
 
-
 .best-articles {
   padding-bottom: 120px;
 
@@ -206,61 +202,6 @@
     .articles {
       display: flex;
       justify-content: space-between;
-
-      .article {
-        max-width: 291px;
-        display: flex;
-        flex-direction: column;
-
-        .article-image {
-          width: 291px;
-          height: 291px;
-          background-position: center;
-          background-size: cover;
-          border-radius: 5px;
-          margin-bottom: 15px;
-          position: relative;
-
-          .article-category {
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            border-radius: 5px;
-            padding: 10px 18px;
-            background: #fff;
-            font-size: 11px;
-            text-align: center;
-            color: $light-blue;
-          }
-        }
-
-        .article-title {
-          font-family: "Montserrat", sans-serif;
-          font-weight: 500;
-          font-size: 20px;
-          line-height: 130%;
-          color: $light-blue;
-          margin-bottom: 20px;
-        }
-
-        .article-text {
-          font-size: 14px;
-          line-height: 130%;
-          color: $dark-blue;
-          display: flex;
-          flex-direction: column;
-          margin-bottom: 20px;
-
-        }
-
-        .article-read-more {
-          margin-top: auto;
-          font-size: 16px;
-          text-decoration: underline;
-          text-decoration-skip-ink: none;
-          color: #709fdc;
-        }
-      }
     }
 
     .blog {
@@ -280,7 +221,6 @@
     }
   }
 }
-
 
 .reviews {
   padding-bottom: 120px;

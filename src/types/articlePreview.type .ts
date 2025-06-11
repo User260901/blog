@@ -1,4 +1,4 @@
-export type BestArticlesType = {
+export type ArticlePreviewType = {
   id: string,
   title: string,
   description: string,

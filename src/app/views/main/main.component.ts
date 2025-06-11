@@ -3,24 +3,24 @@ import {NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgForOf, NgIf, NgStyle} from '@angular/common';
 import {ArticlesService} from '../../shared/services/articles.service';
 import {DefaultResponse} from '../../../types/default-response.type';
-import {BestArticlesType} from '../../../types/best-articles.type';
 import {RouterLink} from '@angular/router';
 import {CarouselModule, OwlOptions} from 'ngx-owl-carousel-o';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import {RequestExpertiseService} from '../../shared/services/request-expertise.service';
 import {PopupComponent} from '../../shared/popup/popup.component';
 import {OurServicesType} from '../../../types/our-services.type';
+import {ArticlesComponent} from '../../shared/articles/articles.component';
+import {ArticlePreviewType} from '../../../types/articlePreview.type ';
 
 @Component({
   selector: 'app-main',
-  imports: [NgbCarouselModule, NgForOf, RouterLink, CarouselModule, NgIf, ReactiveFormsModule, FormsModule, PopupComponent],
+  imports: [NgbCarouselModule, NgForOf, CarouselModule, NgIf, ReactiveFormsModule, FormsModule, PopupComponent, ArticlesComponent, RouterLink],
   templateUrl: './main.component.html',
   standalone: true,
   styleUrl: './main.component.scss'
 })
 export class MainComponent implements OnInit {
 
-  bestArticles: BestArticlesType[] = []
+  bestArticles: ArticlePreviewType[] = []
   orderPopUp = false;
   services: OurServicesType[] = [
     {
@@ -98,7 +98,7 @@ export class MainComponent implements OnInit {
       if ((data as DefaultResponse).error !== undefined) {
         throw new Error((data as DefaultResponse).message)
       }
-      this.bestArticles = data as BestArticlesType[];
+      this.bestArticles = data as ArticlePreviewType[];
       console.log(this.bestArticles);
     })
   }

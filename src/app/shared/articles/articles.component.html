@@ -1,0 +1,9 @@
+<div class="article">
+  <div class="article-image" style="background-image: url('/images/articles/{{article.image}}')">
+    <div class="article-category">{{ article.category }}</div>
+  </div>
+  <div class="article-title">{{ article.title }}</div>
+  <div class="article-text">{{ article.description }}
+  </div>
+  <a class="article-read-more" [routerLink]="['/article', article.url]">Читать дальше</a>
+</div>

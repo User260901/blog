@@ -1,0 +1,97 @@
+@import "../../../../public/styles/variables";
+@import "../../../../public/styles/mixins";
+
+.article-page {
+  padding-top: 80px;
+  padding-bottom: 120px;
+
+  .container {
+    .content {
+
+      .bread-crumbs {
+        margin-bottom: 60px;
+      }
+      .article-main {
+        display: flex;
+        justify-content: space-between;
+        align-content: baseline;
+        margin-bottom: 60px;
+        .article-content {
+          max-width: 607px;
+          font-family: "Lora", sans-serif;
+          font-weight: 400;
+          .article-title {
+            font-size: 38px;
+            line-height: 130%;
+            color: $light-blue;
+            margin-bottom: 40px;
+          }
+          .article-description {
+            font-size: 20px;
+            line-height: 130%;
+            color: #709fdc;
+          }
+        }
+        .article-image {
+          width: 527px;
+          height: 320px;
+          background-size: cover;
+          background-position: center;
+          border-radius: 5px;
+        }
+      }
+      .article {
+        display: flex;
+        justify-content: space-between;
+        .article-text {
+          max-width: 818px;
+        }
+
+        .related-article {
+          margin-top: 60px;
+
+
+
+          .related-articles-title {
+            font-family: "Lora", sans-serif;
+            font-weight: 400;
+            font-size: 26px;
+            line-height: 130%;
+            color: #709fdc;
+            margin-bottom: 20px;
+          }
+
+          .related-items {
+            display: grid;
+            grid-row-gap: 60px;
+
+          }
+        }
+
+        .share-article {
+          display: flex;
+          margin-top: 60px;
+          align-items: center;
+          .share-text {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 130%;
+            color: $light-blue;
+            margin-right: 20px;
+          }
+          .share-socials {
+            svg {
+              margin-right: 15px;
+              cursor: pointer;
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

@@ -160,19 +160,12 @@
   </div>
 </section>
 
+
 <section class="best-articles">
   <div class="container">
     <div class="articles-title">Популярные статьи из блога</div>
     <div class="articles">
-      <div class="article" *ngFor="let article of bestArticles">
-        <div class="article-image" style="background-image: url('/images/articles/{{article.image}}')">
-          <div class="article-category">{{ article.category }}</div>
-        </div>
-        <div class="article-title">{{ article.title }}</div>
-        <div class="article-text">{{ article.description }}
-        </div>
-        <a class="article-read-more">Читать дальше</a>
-      </div>
+      <articles *ngFor="let article of bestArticles" [article]="article"></articles>
     </div>
     <div class="blog">
       <a routerLink="articles">Перейти в блог</a>

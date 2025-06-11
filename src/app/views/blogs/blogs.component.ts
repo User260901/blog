@@ -6,19 +6,21 @@ import {NgForOf, NgIf} from '@angular/common';
 import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import {BlogActiveParamsType} from '../../../types/blog-activeParams.type';
 import {FilterCategories} from '../../../types/filter-categories.type';
+import {ArticlesComponent} from '../../shared/articles/articles.component';
 
 @Component({
-  selector: 'app-articles',
+  selector: 'app-blogs',
   imports: [
     NgForOf,
     NgIf,
-    RouterLink
+    RouterLink,
+    ArticlesComponent
   ],
   standalone: true,
-  templateUrl: './articles.component.html',
-  styleUrl: './articles.component.scss'
+  templateUrl: './blogs.component.html',
+  styleUrl: './blogs.component.scss'
 })
-export class ArticlesComponent implements OnInit {
+export class BlogsComponent implements OnInit {
 
   activeParams: BlogActiveParamsType = {page: 1, categories: []};
   filterOpen = false;

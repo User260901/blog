@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
             if(error){
               this._snackBar.open(error, "закрыть", {duration: 4000});
             }
-            this.AuthService.setTokens(response.accessToken, response.accessToken);
+            this.AuthService.setTokens(response.accessToken, response.refreshToken);
             this.AuthService.userId = response.userId
             this._snackBar.open("Вы успешно авторизовались", 'закрыть', {duration: 3000});
             this.router.navigate(['/']);

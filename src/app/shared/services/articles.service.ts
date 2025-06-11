@@ -1,13 +1,14 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
-import {BestArticlesType} from '../../../types/best-articles.type';
 import {map, Observable} from 'rxjs';
 import {DefaultResponse} from '../../../types/default-response.type';
 import {ArticlesType} from '../../../types/articles.type';
 import {BlogActiveParamsType} from '../../../types/blog-activeParams.type';
 import {FilterCategories} from '../../../types/filter-categories.type';
 import {ArticleType} from '../../../types/article.type';
+import {ArticlePreviewType} from '../../../types/articlePreview.type ';
+import {CommentsType} from '../../../types/comments.type';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,8 @@ export class ArticlesService {
 
   constructor(private http: HttpClient) { }
 
-  getBestArticles(): Observable<BestArticlesType[] | DefaultResponse> {
-    return this.http.get<BestArticlesType[] | DefaultResponse>(environment.api + "articles/top")
+  getBestArticles(): Observable<ArticlePreviewType[] | DefaultResponse> {
+    return this.http.get<ArticlePreviewType[] | DefaultResponse>(environment.api + "articles/top")
   }
 
   getArticles(params:BlogActiveParamsType): Observable<ArticlesType | DefaultResponse> {
@@ -26,8 +27,8 @@ export class ArticlesService {
     })
   }
 
-  getRelatedArticles(url:string): Observable<BestArticlesType[]> {
-    return this.http.get<BestArticlesType[]>(environment.api + "articles/related/" + url)
+  getRelatedArticles(url:string): Observable<ArticlePreviewType[]> {
+    return this.http.get<ArticlePreviewType[]>(environment.api + "articles/related/" + url)
   }
 
   getArticle(url:string): Observable<ArticleType> {
@@ -50,4 +51,5 @@ export class ArticlesService {
   getArticleCategories():Observable<FilterCategories[] | DefaultResponse>{
     return this.http.get<FilterCategories[] | DefaultResponse>(environment.api + "categories")
   }
+
 }

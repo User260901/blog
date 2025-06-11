@@ -1,0 +1,118 @@
+@import "../../../../../public/styles/mixins";
+@import "../../../../../public/styles/variables";
+
+.comment {
+  padding-top: 120px;
+  .container {
+    .comment-title {
+      @include head-lora-38();
+      margin-bottom: 40px;
+    }
+    .first-comment {
+      color: #071739;
+      margin-bottom: 40px;
+
+      a {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 130%;
+        color: #709fdc;
+        text-decoration: none;
+      }
+    }
+    .comment-text {
+      margin-bottom: 20px;
+      textarea {
+        border: 1px solid #709fdc;
+        border-radius: 3px;
+        padding: 20px 64px 20px 20px;
+        width: 818px;
+        height: 248px;
+        outline: none;
+      }
+    }
+    .comment-action {
+      margin-bottom: 60px;
+      .button {
+        border-radius: 5px;
+        padding: 15px 40px;
+        width: 422px;
+        box-sizing: border-box;
+        font-family: "Montserrat", sans-serif;
+        color: #fff;
+      }
+    }
+
+    .other-comments {
+      max-width: 820px;
+      .other-comment {
+        margin-bottom: 40px;
+
+        .other-comment-head {
+          display: flex;
+          align-items: center;
+          margin-bottom: 15px;
+
+          .other-comment-info {
+            margin-left: 26px;
+            .other-comment-name {
+              font-family: "Montserrat", sans-serif;
+              font-weight: 600;
+              font-size: 18px;
+              line-height: 130%;
+              color: $light-blue;
+              margin-bottom: 10px;
+            }
+            .other-comment-date {
+              font-family: "Montserrat", sans-serif;
+              font-weight: 600;
+              font-size: 14px;
+              line-height: 130%;
+              color: #bebebe;
+            }
+          }
+        }
+
+        .other-comment-text {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 140%;
+          color: #071739;
+          margin-bottom: 30px;
+        }
+
+        .other-comment-action {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 131px;
+
+          .other-comment-action-item {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            .action-count {
+              margin-right: 5px;
+            }
+          }
+        }
+
+      }
+      .load-other-comments {
+        margin-top: 60px;
+        cursor: pointer;
+        a {
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 130%;
+          color: #709fdc;
+          text-decoration: none;
+
+          .svg {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}

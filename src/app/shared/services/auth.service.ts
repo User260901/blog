@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {LoginResponseType} from '../../../types/login-response.type';
 import {DefaultResponse} from '../../../types/default-response.type';
-import {Observable, Subject} from 'rxjs';
+import {Observable, Subject, throwError} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -37,9 +37,14 @@ export class AuthService {
   }
 
   logout():Observable<DefaultResponse> {
-    return this.http.post< DefaultResponse>(environment.api + 'logout', {
-      refreshToken: localStorage.getItem(this.refreshTokenKey),
-    })
+    const tokens = this.getTokens();
+    if(tokens && tokens.refreshToken){
+      return this.http.post<DefaultResponse>(environment.api + "logout", {
+        refreshToken: tokens.refreshToken
+      });
+    }
+
+    throw throwError(()=> "Can not find Token")
   }
 
   getIsLoggedIn(){
@@ -58,5 +63,22 @@ export class AuthService {
     localStorage.setItem(this.refreshTokenKey, refreshToken);
     this.isLoggedIn = true;
     this.isLoggedIn$.next(true);
+  }
+
+  getTokens(){
+    return {
+      accessToken: localStorage.getItem(this.accessTokenKey),
+      refreshToken: localStorage.getItem(this.refreshTokenKey)
+    }
+  }
+
+  refresh(): Observable<DefaultResponse | LoginResponseType> {
+    const tokens = this.getTokens();
+    if(tokens && tokens.refreshToken){
+      return this.http.post<DefaultResponse | LoginResponseType>(environment.api + "refresh", {
+        refreshToken: tokens.refreshToken
+      });
+    }
+    throw throwError(()=> 'Can not use Token');
   }
 }

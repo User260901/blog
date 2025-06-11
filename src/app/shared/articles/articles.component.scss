@@ -1,0 +1,54 @@
+@import "../../../../public/styles/mixins";
+@import "../../../../public/styles/variables";
+
+.article {
+  max-width: 291px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .article-image {
+    width: 291px;
+    height: 291px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    position: relative;
+
+    .article-category {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      border-radius: 5px;
+      padding: 10px 18px;
+      background: #fff;
+      font-size: 11px;
+      text-align: center;
+      color: $light-blue;
+    }
+  }
+
+  .article-title {
+   @include montserrat-20();
+    line-height: 130%;
+    margin-bottom: 20px;
+  }
+
+  .article-text {
+    font-size: 14px;
+    line-height: 130%;
+    color: $dark-blue;
+    margin-bottom: 20px;
+    flex-grow: 1
+
+  }
+
+  .article-read-more {
+    font-size: 16px;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #709fdc;
+    margin-top: auto;
+  }
+}

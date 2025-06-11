@@ -47,16 +47,7 @@
       </div>
     </div>
     <div class="articles-items">
-      <div class="articles-item" *ngFor="let article of articles.items">
-        <div class="articles-item-img" style="background-image: url('/images/articles/{{article.image}}')">
-          <div class="article-category">{{ article.category }}</div>
-        </div>
-        <div class="articles-item-title">{{ article.title }}</div>
-        <div class="articles-item-text">{{ article.description }}</div>
-        <div class="articles-item-read-more">
-          <a [routerLink]="['/article', article.url]">Читать дальше</a>
-        </div>
-      </div>
+      <articles *ngFor="let article of articles.items" [article]="article"></articles>
     </div>
 
     <div class="pagination" *ngIf="this.pages.length > 1">

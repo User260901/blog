@@ -10,6 +10,19 @@
 
       .bread-crumbs {
         margin-bottom: 60px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        color: #b9d5fd;
+
+        a {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 130%;
+          color: #709fdc;
+          text-decoration: none;
+          margin-left: 5px;
+        }
       }
       .article-main {
         display: flex;

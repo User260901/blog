@@ -5,13 +5,14 @@ import {LoginResponseType} from '../../../types/login-response.type';
 import {Router} from '@angular/router';
 import {DefaultResponse} from '../../../types/default-response.type';
 import {AuthService} from '../../shared/services/auth.service';
+import {LoaderService} from '../../shared/services/loader.service';
 
 
 
 @Injectable()
 
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router, private LoaderService: LoaderService) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const tokens = this.authService.getTokens()
@@ -19,6 +20,9 @@ export class AuthInterceptor implements HttpInterceptor {
       const authRequest = req.clone({
         headers: req.headers.set('x-auth', tokens.accessToken),
       });
+      if(!authRequest.url.includes('/comments')) {
+        this.LoaderService.show()
+      }
       return next.handle(authRequest)
         .pipe(
           catchError((error) => {
@@ -28,12 +32,17 @@ export class AuthInterceptor implements HttpInterceptor {
             return throwError(()=> error);
           }),
           finalize(()=>{
+            setTimeout(()=>{
+              this.LoaderService.hide()
+            }, 500)
           })
         )
     }
     return next.handle(req)
       .pipe(finalize(()=>{
-
+        setTimeout(()=>{
+          this.LoaderService.hide()
+        }, 500)
       }));
 
   }

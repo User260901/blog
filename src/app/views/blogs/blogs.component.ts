@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ArticlesService} from '../../shared/services/articles.service';
 import {ArticlesType} from '../../../types/articles.type';
 import {DefaultResponse} from '../../../types/default-response.type';
@@ -7,20 +7,20 @@ import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import {BlogActiveParamsType} from '../../../types/blog-activeParams.type';
 import {FilterCategories} from '../../../types/filter-categories.type';
 import {ArticlesComponent} from '../../shared/articles/articles.component';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-blogs',
   imports: [
     NgForOf,
     NgIf,
-    RouterLink,
     ArticlesComponent
   ],
   standalone: true,
   templateUrl: './blogs.component.html',
   styleUrl: './blogs.component.scss'
 })
-export class BlogsComponent implements OnInit {
+export class BlogsComponent implements OnInit, OnDestroy {
 
   activeParams: BlogActiveParamsType = {page: 1, categories: []};
   filterOpen = false;
@@ -34,6 +34,8 @@ export class BlogsComponent implements OnInit {
   filterCategories: FilterCategories[] = []
   pages: number[] = []
 
+  private queryParamsSub!: Subscription;
+
   constructor(private ArticlesService: ArticlesService, private ActivatedRoute: ActivatedRoute, private router: Router) {
   }
 
@@ -42,7 +44,7 @@ export class BlogsComponent implements OnInit {
   }
 
   getParams(){
-    this.ActivatedRoute.queryParams.subscribe(params => {
+    this.queryParamsSub = this.ActivatedRoute.queryParams.subscribe(params => {
       if (params.hasOwnProperty('page')) {
         this.activeParams.page = +params['page'];
       }
@@ -148,6 +150,11 @@ export class BlogsComponent implements OnInit {
 
   toggle() {
     this.filterOpen = !this.filterOpen;
+  }
+
+
+  ngOnDestroy() {
+    this.queryParamsSub.unsubscribe()
   }
 
 }

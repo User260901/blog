@@ -1,6 +1,6 @@
 export type CommentsType = {
   allCount: number,
-  comments: [
+  comments:
   {
     id: string,
     text: string,
@@ -8,10 +8,12 @@ export type CommentsType = {
     likesCount: string,
     dislikesCount: string,
     alreadyLiked?: boolean,
+    alreadyDisliked?: boolean,
+    alreadyReported?: boolean,
     user: {
       id: string,
       name: string,
     }
-  },
-  ]
+  }[],
+
 }

@@ -9,21 +9,18 @@
       margin-bottom: 40px;
     }
     .first-comment {
-      color: #071739;
+      color: $dark-blue;
       margin-bottom: 40px;
-
       a {
-        font-weight: 500;
         font-size: 16px;
-        line-height: 130%;
-        color: #709fdc;
+        color: $light-blue;
         text-decoration: none;
       }
     }
     .comment-text {
       margin-bottom: 20px;
       textarea {
-        border: 1px solid #709fdc;
+        border: 1px solid $light-blue;
         border-radius: 3px;
         padding: 20px 64px 20px 20px;
         width: 818px;
@@ -33,6 +30,10 @@
     }
     .comment-action {
       margin-bottom: 60px;
+      height: 55px;
+      width: 422px;
+      display: flex;
+      justify-content: center;
       .button {
         border-radius: 5px;
         padding: 15px 40px;
@@ -59,7 +60,6 @@
               font-family: "Montserrat", sans-serif;
               font-weight: 600;
               font-size: 18px;
-              line-height: 130%;
               color: $light-blue;
               margin-bottom: 10px;
             }
@@ -67,7 +67,6 @@
               font-family: "Montserrat", sans-serif;
               font-weight: 600;
               font-size: 14px;
-              line-height: 130%;
               color: #bebebe;
             }
           }
@@ -77,7 +76,7 @@
           font-weight: 400;
           font-size: 14px;
           line-height: 140%;
-          color: #071739;
+          color: $dark-blue;
           margin-bottom: 30px;
         }
 
@@ -93,6 +92,17 @@
             align-items: center;
             .action-count {
               margin-right: 5px;
+              width: 10px;
+
+              &.active {
+                color: $light-blue;
+              }
+            }
+          }
+
+          .other-comment-warning {
+            a {
+              cursor: pointer;
             }
           }
         }
@@ -102,12 +112,9 @@
         margin-top: 60px;
         cursor: pointer;
         a {
-          font-weight: 500;
           font-size: 20px;
-          line-height: 130%;
-          color: #709fdc;
+          color: $light-blue;
           text-decoration: none;
-
           .svg {
             margin-left: 10px;
           }

@@ -99,7 +99,6 @@ export class MainComponent implements OnInit {
         throw new Error((data as DefaultResponse).message)
       }
       this.bestArticles = data as ArticlePreviewType[];
-      console.log(this.bestArticles);
     })
   }
 
